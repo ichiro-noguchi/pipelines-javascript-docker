@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tacichiropipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tacichiropipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: tacichiropipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: tacichiropipelinesjavascriptdocker 
+          image: hinoacr.azurecr.io/tacichiropipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
